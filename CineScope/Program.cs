@@ -39,17 +39,25 @@ else
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles(); // ✅ add this too
+app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
+// Default MVC route
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapRazorPages();
+
+// 🟢 Redirect root URL ("/") → Login page
+app.MapGet("/", context =>
+{
+    context.Response.Redirect("/Identity/Account/Login");
+    return Task.CompletedTask;
+});
 
 // 4️⃣ Seed Roles and Admin User
 using (var scope = app.Services.CreateScope())
