@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CineScope")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89ded130bfecaeadee746cb195f5456058a8c4e6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+479f6a2f2cc479f8e664c5246d3686a632798543")]
 [assembly: System.Reflection.AssemblyProductAttribute("CineScope")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CineScope")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
