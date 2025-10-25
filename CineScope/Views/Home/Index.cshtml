@@ -1,8 +1,19 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "CineScope - Explore Movies & More";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center mt-5">
+    <h1 class="display-4 fw-bold text-light">🎬 Welcome to <span class="text-info">CineScope</span></h1>
+    <p class="lead text-secondary mt-3">
+        Discover trending movies, manage content as Admin, and explore the world of cinema — all in one place!
+    </p>
+
+    <div class="mt-4">
+        <a href="/Identity/Account/Login" class="btn btn-primary btn-lg me-2">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+        </a>
+        <a href="/Identity/Account/Register" class="btn btn-outline-light btn-lg">
+            <i class="bi bi-person-plus"></i> Register
+        </a>
+    </div>
 </div>
