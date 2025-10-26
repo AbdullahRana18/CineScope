@@ -1,6 +1,5 @@
 ﻿@model CineScope.Services.MovieDto
 
-
 @{
     ViewData["Title"] = Model.Title;
 }
@@ -63,15 +62,15 @@
         transition: background 0.3s ease;
     }
 
-    .btn-back:hover {
-        background-color: #0bb2d6;
-    }
+        .btn-back:hover {
+            background-color: #0bb2d6;
+        }
 
-    .similar-section {
+    .similar-section, .cast-section {
         margin-top: 60px;
     }
 
-    .movie-card {
+    .movie-card, .cast-card {
         background-color: #1c2233;
         border: none;
         border-radius: 10px;
@@ -79,21 +78,21 @@
         overflow: hidden;
     }
 
-        .movie-card:hover {
+        .movie-card:hover, .cast-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
         }
 
-        .movie-card img {
+        .movie-card img, .cast-card img {
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
-            height: 350px;
+            height: 330px;
             object-fit: cover;
         }
 
-    .movie-card .movie-info {
-        padding: 10px;
-    }
+        .movie-card .movie-info {
+            padding: 10px;
+        }
 
     .movie-title-small {
         font-size: 1rem;
@@ -109,8 +108,9 @@
         <div class="movie-info">
             <h2 class="movie-title">@Model.Title</h2>
             <p class="movie-overview">@Model.Overview</p>
+
             <p class="movie-meta">
-                <strong>📅 Release Date:</strong>
+                <strong>Release Date:</strong>
                 @{
                     if (DateTime.TryParse(Model.ReleaseDate, out var parsedDate))
                     {
@@ -122,14 +122,15 @@
                     }
                 }
             </p>
-            <p class="movie-meta"><strong>⭐ Rating:</strong> <span class="rating">@Model.VoteAverage.ToString("0.0")</span></p>
+
+            <p class="movie-meta"><strong>Rating:</strong> <span class="rating">@Model.VoteAverage.ToString("0.0")</span></p>
 
             @if (Model.Genres != null && Model.Genres.Any())
             {
-                <p class="movie-meta"><strong>🎭 Genres:</strong> @string.Join(", ", Model.Genres.Select(g => g.Name))</p>
+                <p class="movie-meta"><strong>Genres:</strong> @string.Join(", ", Model.Genres.Select(g => g.Name))</p>
             }
 
-            <a asp-controller="Movies" asp-action="Trending" class="btn btn-back mt-3">⬅ Back to Trending</a>
+            <a asp-controller="Movies" asp-action="Trending" class="btn btn-back mt-3">Back to Trending</a>
         </div>
     </div>
 
@@ -138,7 +139,7 @@
     @if (ViewBag.SimilarMovies != null && ViewBag.SimilarMovies.Count > 0)
     {
         <div class="similar-section">
-            <h3 class="text-info fw-bold mb-4 text-center">🎬 You Might Also Like</h3>
+            <h3 class="text-info fw-bold mb-4 text-center">You Might Also Like</h3>
             <div class="row">
                 @foreach (var movie in ViewBag.SimilarMovies)
                 {
@@ -148,9 +149,31 @@
                                 <img src="https://image.tmdb.org/t/p/w500/@movie.PosterPath" alt="@movie.Title" class="card-img-top" />
                                 <div class="movie-info">
                                     <div class="movie-title-small">@movie.Title</div>
-                                    <p class="rating">⭐ @movie.VoteAverage.ToString("0.0")</p>
+                                    <p class="rating">@movie.VoteAverage.ToString("0.0")</p>
                                 </div>
                             </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+
+    @if (ViewBag.Cast != null && ViewBag.Cast.Count > 0)
+    {
+        <div class="cast-section">
+            <h3 class="text-info fw-bold mb-4 text-center">Cast & Crew</h3>
+            <div class="row justify-content-center">
+                @foreach (var actor in ViewBag.Cast)
+                {
+                    <div class="col-md-3 col-sm-6 mb-4 d-flex justify-content-center">
+                        <div class="card cast-card shadow" style="width:220px;">
+                            <img src="https://image.tmdb.org/t/p/w500/@(actor.ProfilePath ?? "https://via.placeholder.com/220x330?text=No+Image")"
+                                 alt="@actor.Name" />
+                            <div class="card-body text-center text-light">
+                                <h6 class="fw-bold text-info">@actor.Name</h6>
+                                <p class="text-muted mb-0">as @actor.Character</p>
+                            </div>
                         </div>
                     </div>
                 }

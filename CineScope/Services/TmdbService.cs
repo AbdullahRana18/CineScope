@@ -19,109 +19,59 @@ namespace CineScope.Services
             _httpClient = httpClient;
             _apiKeyOrToken = configuration["TMDb:ApiKey"] ?? string.Empty;
 
-            // Detect if provided value looks like a v4 Bearer token (JWT starting with eyJ)
+            // Detect if the provided token is a v4 Bearer token (starts with "eyJ")
             _useBearer = _apiKeyOrToken.StartsWith("eyJ", StringComparison.OrdinalIgnoreCase);
 
             if (_useBearer)
             {
-                // set Authorization header for every request (v4 token)
                 _httpClient.DefaultRequestHeaders.Authorization =
                     new AuthenticationHeaderValue("Bearer", _apiKeyOrToken);
             }
         }
 
+        // Get trending movies
         public async Task<TmdbResponse?> GetTrendingMoviesAsync()
         {
-            string url;
-            if (_useBearer)
-            {
-                // v4 token in header, call endpoint without api_key query
-                url = $"{_baseUrl}/trending/movie/week";
-            }
-            else
-            {
-                // v3 key expects ?api_key=KEY
-                url = $"{_baseUrl}/trending/movie/week?api_key={_apiKeyOrToken}";
-            }
+            string url = _useBearer
+                ? $"{_baseUrl}/trending/movie/week"
+                : $"{_baseUrl}/trending/movie/week?api_key={_apiKeyOrToken}";
 
             var response = await _httpClient.GetAsync(url);
-            if (!response.IsSuccessStatusCode)
-            {
-                // Optionally log status code here
-                return null;
-            }
+            if (!response.IsSuccessStatusCode) return null;
 
             var json = await response.Content.ReadAsStringAsync();
-            try
-            {
-                return JsonConvert.DeserializeObject<TmdbResponse>(json);
-            }
-            catch
-            {
-                // JSON parse failed
-                return null;
-            }
+            return JsonConvert.DeserializeObject<TmdbResponse>(json);
         }
-        public async Task<TmdbResponse?> SearchMoviesAsync (string query)
+
+        // Search movies by title
+        public async Task<TmdbResponse?> SearchMoviesAsync(string query)
         {
-            string url;
-            if (_useBearer)
-            {
-                // v4 token in header, call endpoint without api_key query
-                url = $"{_baseUrl}/search/movie?query={Uri.EscapeDataString(query)}";
-            }
-            else
-            {
-                // v3 key expects ?api_key=KEY
-                url = $"{_baseUrl}/search/movie?api_key={_apiKeyOrToken}&query={Uri.EscapeDataString(query)}";
-            }
+            string url = _useBearer
+                ? $"{_baseUrl}/search/movie?query={Uri.EscapeDataString(query)}"
+                : $"{_baseUrl}/search/movie?api_key={_apiKeyOrToken}&query={Uri.EscapeDataString(query)}";
+
             var response = await _httpClient.GetAsync(url);
-            if (!response.IsSuccessStatusCode)
-            {
-                // Optionally log status code here
-                return null;
-            }
+            if (!response.IsSuccessStatusCode) return null;
+
             var json = await response.Content.ReadAsStringAsync();
-            try
-            {
-                return JsonConvert.DeserializeObject<TmdbResponse>(json);
-            }
-            catch
-            {
-                // JSON parse failed
-                return null;
-            }
+            return JsonConvert.DeserializeObject<TmdbResponse>(json);
         }
+
+        // Get movie details
         public async Task<MovieDto?> GetMovieDetailsAsync(int movieId)
         {
-            string url;
-            if (_useBearer)
-            {
-                // v4 token in header, call endpoint without api_key query
-                url = $"{_baseUrl}/movie/{movieId}";
-            }
-            else
-            {
-                // v3 key expects ?api_key=KEY
-                url = $"{_baseUrl}/movie/{movieId}?api_key={_apiKeyOrToken}";
-            }
+            string url = _useBearer
+                ? $"{_baseUrl}/movie/{movieId}"
+                : $"{_baseUrl}/movie/{movieId}?api_key={_apiKeyOrToken}";
+
             var response = await _httpClient.GetAsync(url);
-            if (!response.IsSuccessStatusCode)
-            {
-                // Optionally log status code here
-                return null;
-            }
+            if (!response.IsSuccessStatusCode) return null;
+
             var json = await response.Content.ReadAsStringAsync();
-            try
-            {
-                return JsonConvert.DeserializeObject<MovieDto>(json);
-            }
-            catch
-            {
-                // JSON parse failed
-                return null;
-            }
+            return JsonConvert.DeserializeObject<MovieDto>(json);
         }
+
+        // Get similar movies
         public async Task<TmdbResponse?> GetSimilarMoviesAsync(int movieId)
         {
             string url = _useBearer
@@ -134,10 +84,25 @@ namespace CineScope.Services
             var json = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<TmdbResponse>(json);
         }
+
+        // Get top billed cast (first 8 actors)
+        public async Task<List<CastInfo>?> GetMovieCastAsync(int movieId)
+        {
+            string url = _useBearer
+                ? $"{_baseUrl}/movie/{movieId}/credits"
+                : $"{_baseUrl}/movie/{movieId}/credits?api_key={_apiKeyOrToken}";
+
+            var response = await _httpClient.GetAsync(url);
+            if (!response.IsSuccessStatusCode) return null;
+
+            var json = await response.Content.ReadAsStringAsync();
+            var credits = JsonConvert.DeserializeObject<CreditsResponse>(json);
+
+            return credits?.Cast?.Take(8).ToList();
+        }
     }
 
-
-
+    // DTO for TMDB API responses
     public class TmdbResponse
     {
         [JsonProperty("results")]
@@ -161,7 +126,6 @@ namespace CineScope.Services
         [JsonProperty("poster_path")]
         public string PosterPath { get; set; } = string.Empty;
 
-        // ✅ new fields added below
         [JsonProperty("vote_average")]
         public double VoteAverage { get; set; }
 
@@ -184,4 +148,22 @@ namespace CineScope.Services
         public string Name { get; set; } = string.Empty;
     }
 
+    // Integrated Cast Models
+    public class CastInfo
+    {
+        [JsonProperty("name")]
+        public string Name { get; set; } = string.Empty;
+
+        [JsonProperty("character")]
+        public string Character { get; set; } = string.Empty;
+
+        [JsonProperty("profile_path")]
+        public string? ProfilePath { get; set; }
+    }
+
+    public class CreditsResponse
+    {
+        [JsonProperty("cast")]
+        public List<CastInfo>? Cast { get; set; }
+    }
 }

@@ -8,14 +8,17 @@ namespace CineScope.Controllers
     public class MoviesController : Controller
     {
         private readonly TmdbService _tmdbService;
+
         public MoviesController(TmdbService tmdbService)
         {
             _tmdbService = tmdbService;
         }
+
         public IActionResult Index()
         {
             return RedirectToAction("Trending");
         }
+
         public async Task<IActionResult> Trending()
         {
             var trendingMovies = await _tmdbService.GetTrendingMoviesAsync();
@@ -26,6 +29,7 @@ namespace CineScope.Controllers
 
             return View("Trending", trendingMovies);
         }
+
         [HttpGet]
         public async Task<IActionResult> Search(string query)
         {
@@ -34,12 +38,14 @@ namespace CineScope.Controllers
                 ViewData["Error"] = "Please enter a movie name.";
                 return View("Trending", null);
             }
+
             var searchResults = await _tmdbService.SearchMoviesAsync(query);
-            if (searchResults == null || searchResults.Results == null ||!searchResults.Results.Any())
+            if (searchResults == null || searchResults.Results == null || !searchResults.Results.Any())
             {
                 ViewData["Error"] = $"No results found for '{query}'.";
                 return View("Trending", null);
             }
+
             ViewData["Title"] = $"Search Results for '{query}'";
             return View("Trending", searchResults);
         }
@@ -47,15 +53,23 @@ namespace CineScope.Controllers
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
+            // Fetch detailed movie info
             var movie = await _tmdbService.GetMovieDetailsAsync(id);
-            var similarMovies = await _tmdbService.GetSimilarMoviesAsync(id);
-            if (movie ==null)
+
+            if (movie == null)
             {
                 return NotFound();
             }
+
+            // Fetch similar movies
+            var similarMovies = await _tmdbService.GetSimilarMoviesAsync(id);
             ViewBag.SimilarMovies = similarMovies?.Results ?? new List<MovieDto>();
+
+            // Fetch cast and crew information
+            var castList = await _tmdbService.GetMovieCastAsync(id);
+            ViewBag.Cast = castList ?? new List<CastInfo>();
+
             return View(movie);
         }
-      
     }
 }
