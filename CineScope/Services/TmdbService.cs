@@ -122,6 +122,18 @@ namespace CineScope.Services
                 return null;
             }
         }
+        public async Task<TmdbResponse?> GetSimilarMoviesAsync(int movieId)
+        {
+            string url = _useBearer
+                ? $"{_baseUrl}/movie/{movieId}/similar"
+                : $"{_baseUrl}/movie/{movieId}/similar?api_key={_apiKeyOrToken}";
+
+            var response = await _httpClient.GetAsync(url);
+            if (!response.IsSuccessStatusCode) return null;
+
+            var json = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<TmdbResponse>(json);
+        }
     }
 
 

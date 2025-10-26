@@ -48,10 +48,12 @@ namespace CineScope.Controllers
         public async Task<IActionResult> Details(int id)
         {
             var movie = await _tmdbService.GetMovieDetailsAsync(id);
-            if(movie ==null)
+            var similarMovies = await _tmdbService.GetSimilarMoviesAsync(id);
+            if (movie ==null)
             {
                 return NotFound();
             }
+            ViewBag.SimilarMovies = similarMovies?.Results ?? new List<MovieDto>();
             return View(movie);
         }
       

@@ -1,114 +1,160 @@
 ﻿@model CineScope.Services.MovieDto
+
+
 @{
     ViewData["Title"] = Model.Title;
 }
 
 <style>
     body {
-        background: linear-gradient(145deg, #0a0f1c 0%, #1b2335 100%);
+        background: linear-gradient(135deg, #0a0f1c 0%, #1a1f2c 100%);
         color: #f1f1f1;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        min-height: 100vh;
     }
 
     .movie-container {
         display: flex;
         flex-wrap: wrap;
-        gap: 30px;
-        margin-top: 50px;
         justify-content: center;
         align-items: flex-start;
+        gap: 40px;
+        margin-top: 50px;
     }
 
-    .poster {
-        flex: 1 1 320px;
+    .movie-poster {
         max-width: 350px;
-    }
-
-        .poster img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-        }
-
-    .info {
-        flex: 2 1 500px;
-        background-color: #1c2233;
         border-radius: 12px;
-        padding: 25px;
-        box-shadow: 0 8px 18px rgba(0,0,0,0.5);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
-        .info h2 {
-            color: #0dcaf0;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
+    .movie-info {
+        max-width: 600px;
+    }
 
-        .info p {
-            font-size: 1rem;
-            color: #ccc;
-            margin-bottom: 8px;
-        }
+    .movie-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #0dcaf0;
+        margin-bottom: 15px;
+    }
+
+    .movie-overview {
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .movie-meta {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
 
     .rating {
-        font-weight: 600;
         color: #ffd700;
-        font-size: 1.1rem;
+        font-weight: 600;
     }
 
-    .back-btn {
-        margin-top: 30px;
+    .btn-back {
+        background-color: #0dcaf0;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 8px 18px;
+        transition: background 0.3s ease;
     }
 
-        .back-btn a {
-            text-decoration: none;
-            color: white;
-            background-color: #0dcaf0;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: background 0.3s;
+    .btn-back:hover {
+        background-color: #0bb2d6;
+    }
+
+    .similar-section {
+        margin-top: 60px;
+    }
+
+    .movie-card {
+        background-color: #1c2233;
+        border: none;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+    }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
         }
 
-            .back-btn a:hover {
-                background-color: #06b5dc;
-            }
+        .movie-card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            height: 350px;
+            object-fit: cover;
+        }
+
+    .movie-card .movie-info {
+        padding: 10px;
+    }
+
+    .movie-title-small {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #0dcaf0;
+    }
 </style>
 
 <div class="container">
     <div class="movie-container">
-        <div class="poster">
-            <img src="https://image.tmdb.org/t/p/w500/@Model.PosterPath" alt="@Model.Title" />
-        </div>
+        <img src="https://image.tmdb.org/t/p/w500/@Model.PosterPath" alt="@Model.Title" class="movie-poster" />
 
-        <div class="info">
-            <h2>@Model.Title</h2>
-
-            <!-- ✅ rating, votes, genres, runtime, popularity added -->
-            <p class="rating">
-                ⭐ Rating: @Model.VoteAverage.ToString("0.0") / 10
-                &nbsp; | &nbsp; 🗳 Votes: @Model.VoteCount
+        <div class="movie-info">
+            <h2 class="movie-title">@Model.Title</h2>
+            <p class="movie-overview">@Model.Overview</p>
+            <p class="movie-meta">
+                <strong>📅 Release Date:</strong>
+                @{
+                    if (DateTime.TryParse(Model.ReleaseDate, out var parsedDate))
+                    {
+                        @parsedDate.ToString("yyyy-MM-dd")
+                    }
+                    else
+                    {
+                        @Model.ReleaseDate
+                    }
+                }
             </p>
+            <p class="movie-meta"><strong>⭐ Rating:</strong> <span class="rating">@Model.VoteAverage.ToString("0.0")</span></p>
 
             @if (Model.Genres != null && Model.Genres.Any())
             {
-                <p>🎭 Genres: @string.Join(", ", Model.Genres.Select(g => g.Name))</p>
+                <p class="movie-meta"><strong>🎭 Genres:</strong> @string.Join(", ", Model.Genres.Select(g => g.Name))</p>
             }
 
-            @if (Model.Runtime != null && Model.Runtime > 0)
-            {
-                <p>⏱ Runtime: @Model.Runtime mins</p>
-            }
-
-            <p>📅 Release Date: @Model.ReleaseDate</p>
-            <p>🔥 Popularity: @Model.Popularity.ToString("0")</p>
-
-            <hr style="border-color:#444;" />
-            <p>@Model.Overview</p>
-
-            <div class="back-btn">
-                <a asp-controller="Movies" asp-action="Trending">⬅ Back to Trending</a>
-            </div>
+            <a asp-controller="Movies" asp-action="Trending" class="btn btn-back mt-3">⬅ Back to Trending</a>
         </div>
     </div>
+
+    <hr class="my-5" style="border-color:#333;" />
+
+    @if (ViewBag.SimilarMovies != null && ViewBag.SimilarMovies.Count > 0)
+    {
+        <div class="similar-section">
+            <h3 class="text-info fw-bold mb-4 text-center">🎬 You Might Also Like</h3>
+            <div class="row">
+                @foreach (var movie in ViewBag.SimilarMovies)
+                {
+                    <div class="col-md-3 mb-4 d-flex">
+                        <div class="card movie-card shadow flex-fill">
+                            <a asp-controller="Movies" asp-action="Details" asp-route-id="@movie.Id" style="text-decoration:none;color:inherit;">
+                                <img src="https://image.tmdb.org/t/p/w500/@movie.PosterPath" alt="@movie.Title" class="card-img-top" />
+                                <div class="movie-info">
+                                    <div class="movie-title-small">@movie.Title</div>
+                                    <p class="rating">⭐ @movie.VoteAverage.ToString("0.0")</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
 </div>
