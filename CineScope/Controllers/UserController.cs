@@ -26,6 +26,23 @@ namespace CineScope.Controllers
 
             return View("Trending", trendingMovies);
         }
+        [HttpGet]
+        public async Task<IActionResult> Search(string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                ViewData["Error"] = "Please enter a movie name.";
+                return View("Trending", null);
+            }
+            var searchResults = await _tmdbService.SearchMoviesAsync(query);
+            if (searchResults == null || searchResults.Results == null ||!searchResults.Results.Any())
+            {
+                ViewData["Error"] = $"No results found for '{query}'.";
+                return View("Trending", null);
+            }
+            ViewData["Title"] = $"Search Results for '{query}'";
+            return View("Trending", searchResults);
+        }
       
     }
 }

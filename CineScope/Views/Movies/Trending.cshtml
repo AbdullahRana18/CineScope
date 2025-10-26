@@ -62,6 +62,17 @@
 <div class="container mt-5">
     <h2 class="text-center text-info fw-bold mb-4">🎬 Trending Movies</h2>
 
+    <form asp-controller="Movies" asp-action="Search" method="get" class="d-flex justify-content-center mb-4" style="max-width:600px;margin:auto;">
+        <input type="text" name="query" class="form-control me-2" placeholder="Search movies..." />
+        <button class="btn btn-outline-info" type="submit">Search</button>
+    </form>
+    @if (ViewData["Title"]?.ToString().Contains("Search") == true)
+    {
+        <div class="text-center mb-4">
+            <a asp-controller="Movies" asp-action="Trending" class="btn btn-outline-info">⬅ Back to Trending</a>
+        </div>
+    }
+
     <div class="row">
         @if (Model?.Results != null && Model.Results.Any())
         {

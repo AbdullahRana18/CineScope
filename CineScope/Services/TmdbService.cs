@@ -62,6 +62,36 @@ namespace CineScope.Services
                 return null;
             }
         }
+        public async Task<TmdbResponse?> SearchMoviesAsync (string query)
+        {
+            string url;
+            if (_useBearer)
+            {
+                // v4 token in header, call endpoint without api_key query
+                url = $"{_baseUrl}/search/movie?query={Uri.EscapeDataString(query)}";
+            }
+            else
+            {
+                // v3 key expects ?api_key=KEY
+                url = $"{_baseUrl}/search/movie?api_key={_apiKeyOrToken}&query={Uri.EscapeDataString(query)}";
+            }
+            var response = await _httpClient.GetAsync(url);
+            if (!response.IsSuccessStatusCode)
+            {
+                // Optionally log status code here
+                return null;
+            }
+            var json = await response.Content.ReadAsStringAsync();
+            try
+            {
+                return JsonConvert.DeserializeObject<TmdbResponse>(json);
+            }
+            catch
+            {
+                // JSON parse failed
+                return null;
+            }
+        }
     }
 
     public class TmdbResponse

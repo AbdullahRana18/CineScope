@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "D:\\ASPNET\\CineScope\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|solutionrelative:cinescope\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|solutionrelative:cinescope\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\views\\movies\\trending.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|solutionrelative:cinescope\\views\\movies\\trending.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|solutionrelative:cinescope\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\views\\movies\\trending.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|solutionrelative:cinescope\\views\\movies\\trending.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\services\\encryptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|solutionrelative:cinescope\\services\\encryptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|solutionrelative:cinescope\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\services\\tmdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|solutionrelative:cinescope\\services\\tmdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|solutionrelative:cinescope\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|solutionrelative:cinescope\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|solutionrelative:cinescope\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\services\\tmdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|solutionrelative:cinescope\\services\\tmdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,14 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|solutionrelative:cinescope\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\services\\encryptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|solutionrelative:cinescope\\services\\encryptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|solutionrelative:cinescope\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7440D7CD-F36E-2DB4-3DA8-2058253D70CC}|CineScope\\CineScope.csproj|d:\\aspnet\\cinescope\\cinescope\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -150,7 +150,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -158,46 +158,85 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "CineScope\\Controllers\\UserController.cs",
               "ToolTip": "D:\\ASPNET\\CineScope\\CineScope\\Controllers\\UserController.cs",
               "RelativeToolTip": "CineScope\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAiwDAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-24T11:42:03.801Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Models\\User.cs",
-              "RelativeDocumentMoniker": "CineScope\\Models\\User.cs",
-              "ToolTip": "D:\\ASPNET\\CineScope\\CineScope\\Models\\User.cs",
-              "RelativeToolTip": "CineScope\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T19:24:10.916Z",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "CineScope\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\ASPNET\\CineScope\\CineScope\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CineScope\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADgAAAAAAAAAAAAlwEEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-24T11:19:27.778Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
+              "Title": "TmdbService.cs",
+              "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Services\\TmdbService.cs",
+              "RelativeDocumentMoniker": "CineScope\\Services\\TmdbService.cs",
+              "ToolTip": "D:\\ASPNET\\CineScope\\CineScope\\Services\\TmdbService.cs",
+              "RelativeToolTip": "CineScope\\Services\\TmdbService.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAkwF0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T19:45:55.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "CineScope\\Services\\AuthService.cs",
+              "ToolTip": "D:\\ASPNET\\CineScope\\CineScope\\Services\\AuthService.cs",
+              "RelativeToolTip": "CineScope\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T19:24:13.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Trending.cshtml",
               "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Views\\Movies\\Trending.cshtml",
               "RelativeDocumentMoniker": "CineScope\\Views\\Movies\\Trending.cshtml",
               "ToolTip": "D:\\ASPNET\\CineScope\\CineScope\\Views\\Movies\\Trending.cshtml",
               "RelativeToolTip": "CineScope\\Views\\Movies\\Trending.cshtml",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAiwFwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAwwEMAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-24T11:37:06.471Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "EncryptionService.cs",
+              "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Services\\EncryptionService.cs",
+              "RelativeDocumentMoniker": "CineScope\\Services\\EncryptionService.cs",
+              "ToolTip": "D:\\ASPNET\\CineScope\\CineScope\\Services\\EncryptionService.cs",
+              "RelativeToolTip": "CineScope\\Services\\EncryptionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T19:24:15.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Program.cs",
               "RelativeDocumentMoniker": "CineScope\\Program.cs",
@@ -205,25 +244,11 @@
               "RelativeToolTip": "CineScope\\Program.cs",
               "ViewState": "AgIAADUAAAAAAAAAAAAiwEQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T11:10:50.464Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-24T11:10:50.464Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "CineScope\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\ASPNET\\CineScope\\CineScope\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "CineScope\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAiwFYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-24T11:19:27.778Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "CineScope\\Views\\Shared\\_LoginPartial.cshtml",
@@ -231,12 +256,23 @@
               "RelativeToolTip": "CineScope\\Views\\Shared\\_LoginPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-24T11:44:12.266Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-24T11:44:12.266Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Models\\User.cs",
+              "RelativeDocumentMoniker": "CineScope\\Models\\User.cs",
+              "ToolTip": "D:\\ASPNET\\CineScope\\CineScope\\Models\\User.cs",
+              "RelativeToolTip": "CineScope\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T19:24:10.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\appsettings.json",
               "RelativeDocumentMoniker": "CineScope\\appsettings.json",
@@ -244,25 +280,11 @@
               "RelativeToolTip": "CineScope\\appsettings.json",
               "ViewState": "AgIAAAcAAAAAAAAAAAAcwBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-24T11:01:01.426Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-24T11:01:01.426Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TmdbService.cs",
-              "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Services\\TmdbService.cs",
-              "RelativeDocumentMoniker": "CineScope\\Services\\TmdbService.cs",
-              "ToolTip": "D:\\ASPNET\\CineScope\\CineScope\\Services\\TmdbService.cs",
-              "RelativeToolTip": "CineScope\\Services\\TmdbService.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAywFoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T19:45:55.744Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "CineScope\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
@@ -270,12 +292,11 @@
               "RelativeToolTip": "CineScope\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "ViewState": "AgIAAFQAAAAAAAAAAAAAAH4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-26T13:53:48.107Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-26T13:53:48.107Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "CineScope\\Views\\Home\\Index.cshtml",
@@ -287,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Views\\Admin\\Index.cshtml",
               "RelativeDocumentMoniker": "CineScope\\Views\\Admin\\Index.cshtml",
@@ -299,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "CineScope\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
@@ -311,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Login.cshtml.cs",
               "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "CineScope\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
@@ -323,7 +344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "ManageMovies.cshtml",
               "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Views\\Admin\\ManageMovies.cshtml",
               "RelativeDocumentMoniker": "CineScope\\Views\\Admin\\ManageMovies.cshtml",
@@ -335,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "CineScope\\Controllers\\HomeController.cs",
@@ -347,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "AdminController.cs",
               "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "CineScope\\Controllers\\AdminController.cs",
@@ -356,30 +377,6 @@
               "ViewState": "AgIAABcAAAAAAAAAAAAiwCYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-24T11:38:50.697Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "EncryptionService.cs",
-              "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Services\\EncryptionService.cs",
-              "RelativeDocumentMoniker": "CineScope\\Services\\EncryptionService.cs",
-              "ToolTip": "D:\\ASPNET\\CineScope\\CineScope\\Services\\EncryptionService.cs",
-              "RelativeToolTip": "CineScope\\Services\\EncryptionService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T19:24:15.349Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "D:\\ASPNET\\CineScope\\CineScope\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "CineScope\\Services\\AuthService.cs",
-              "ToolTip": "D:\\ASPNET\\CineScope\\CineScope\\Services\\AuthService.cs",
-              "RelativeToolTip": "CineScope\\Services\\AuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T19:24:13.111Z"
             },
             {
               "$type": "Document",
