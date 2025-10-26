@@ -81,7 +81,10 @@
                 <div class="col-md-3 mb-4 d-flex">
                     <div class="card movie-card shadow flex-fill">
                         <!-- ✅ fixed URL: added "/" before @movie.PosterPath -->
-                        <img src="https://image.tmdb.org/t/p/w500/@movie.PosterPath" alt="@movie.Title" class="card-img-top" />
+                        <a asp-controller="Movies" asp-action="Details" asp-route-id="@movie.Id">
+                            <img src="https://image.tmdb.org/t/p/w500/@movie.PosterPath" alt="@movie.Title" class="card-img-top" />
+                        </a>
+
                         <div class="movie-info">
                             <div class="movie-title">@movie.Title</div>
                             <p class="movie-overview">

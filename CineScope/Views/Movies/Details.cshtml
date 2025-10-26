@@ -1,0 +1,114 @@
+﻿@model CineScope.Services.MovieDto
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<style>
+    body {
+        background: linear-gradient(145deg, #0a0f1c 0%, #1b2335 100%);
+        color: #f1f1f1;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+    }
+
+    .movie-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 50px;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .poster {
+        flex: 1 1 320px;
+        max-width: 350px;
+    }
+
+        .poster img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+        }
+
+    .info {
+        flex: 2 1 500px;
+        background-color: #1c2233;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.5);
+    }
+
+        .info h2 {
+            color: #0dcaf0;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .info p {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 8px;
+        }
+
+    .rating {
+        font-weight: 600;
+        color: #ffd700;
+        font-size: 1.1rem;
+    }
+
+    .back-btn {
+        margin-top: 30px;
+    }
+
+        .back-btn a {
+            text-decoration: none;
+            color: white;
+            background-color: #0dcaf0;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+            .back-btn a:hover {
+                background-color: #06b5dc;
+            }
+</style>
+
+<div class="container">
+    <div class="movie-container">
+        <div class="poster">
+            <img src="https://image.tmdb.org/t/p/w500/@Model.PosterPath" alt="@Model.Title" />
+        </div>
+
+        <div class="info">
+            <h2>@Model.Title</h2>
+
+            <!-- ✅ rating, votes, genres, runtime, popularity added -->
+            <p class="rating">
+                ⭐ Rating: @Model.VoteAverage.ToString("0.0") / 10
+                &nbsp; | &nbsp; 🗳 Votes: @Model.VoteCount
+            </p>
+
+            @if (Model.Genres != null && Model.Genres.Any())
+            {
+                <p>🎭 Genres: @string.Join(", ", Model.Genres.Select(g => g.Name))</p>
+            }
+
+            @if (Model.Runtime != null && Model.Runtime > 0)
+            {
+                <p>⏱ Runtime: @Model.Runtime mins</p>
+            }
+
+            <p>📅 Release Date: @Model.ReleaseDate</p>
+            <p>🔥 Popularity: @Model.Popularity.ToString("0")</p>
+
+            <hr style="border-color:#444;" />
+            <p>@Model.Overview</p>
+
+            <div class="back-btn">
+                <a asp-controller="Movies" asp-action="Trending">⬅ Back to Trending</a>
+            </div>
+        </div>
+    </div>
+</div>

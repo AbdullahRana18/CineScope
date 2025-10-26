@@ -92,7 +92,39 @@ namespace CineScope.Services
                 return null;
             }
         }
+        public async Task<MovieDto?> GetMovieDetailsAsync(int movieId)
+        {
+            string url;
+            if (_useBearer)
+            {
+                // v4 token in header, call endpoint without api_key query
+                url = $"{_baseUrl}/movie/{movieId}";
+            }
+            else
+            {
+                // v3 key expects ?api_key=KEY
+                url = $"{_baseUrl}/movie/{movieId}?api_key={_apiKeyOrToken}";
+            }
+            var response = await _httpClient.GetAsync(url);
+            if (!response.IsSuccessStatusCode)
+            {
+                // Optionally log status code here
+                return null;
+            }
+            var json = await response.Content.ReadAsStringAsync();
+            try
+            {
+                return JsonConvert.DeserializeObject<MovieDto>(json);
+            }
+            catch
+            {
+                // JSON parse failed
+                return null;
+            }
+        }
     }
+
+
 
     public class TmdbResponse
     {
@@ -116,5 +148,28 @@ namespace CineScope.Services
 
         [JsonProperty("poster_path")]
         public string PosterPath { get; set; } = string.Empty;
+
+        // ✅ new fields added below
+        [JsonProperty("vote_average")]
+        public double VoteAverage { get; set; }
+
+        [JsonProperty("vote_count")]
+        public int VoteCount { get; set; }
+
+        [JsonProperty("runtime")]
+        public int? Runtime { get; set; }
+
+        [JsonProperty("genres")]
+        public List<GenreDto> Genres { get; set; } = new();
+
+        [JsonProperty("popularity")]
+        public double Popularity { get; set; }
     }
+
+    public class GenreDto
+    {
+        [JsonProperty("name")]
+        public string Name { get; set; } = string.Empty;
+    }
+
 }

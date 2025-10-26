@@ -43,6 +43,17 @@ namespace CineScope.Controllers
             ViewData["Title"] = $"Search Results for '{query}'";
             return View("Trending", searchResults);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var movie = await _tmdbService.GetMovieDetailsAsync(id);
+            if(movie ==null)
+            {
+                return NotFound();
+            }
+            return View(movie);
+        }
       
     }
 }
