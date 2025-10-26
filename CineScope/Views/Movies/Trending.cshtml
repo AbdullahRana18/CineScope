@@ -1,0 +1,92 @@
+﻿@model CineScope.Services.TmdbResponse
+
+@{
+    ViewData["Title"] = "Trending Movies";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #0a0f1c 0%, #1a1f2c 100%);
+        color: #f1f1f1;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+    }
+
+    .movie-card {
+        background-color: #1c2233;
+        border: none;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        height: 100%;
+    }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+        }
+
+        .movie-card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            height: 360px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+    .movie-info {
+        padding: 15px;
+    }
+
+    .movie-title {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #0dcaf0;
+        margin-bottom: 6px;
+    }
+
+    .movie-overview {
+        color: #bbb;
+        font-size: 0.9rem;
+        height: 60px;
+        overflow: hidden;
+    }
+
+    .rating {
+        font-weight: 600;
+        color: #ffd700;
+        margin-top: 8px;
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="text-center text-info fw-bold mb-4">🎬 Trending Movies</h2>
+
+    <div class="row">
+        @if (Model?.Results != null && Model.Results.Any())
+        {
+            foreach (var movie in Model.Results)
+            {
+                <div class="col-md-3 mb-4 d-flex">
+                    <div class="card movie-card shadow flex-fill">
+                        <!-- ✅ fixed URL: added "/" before @movie.PosterPath -->
+                        <img src="https://image.tmdb.org/t/p/w500/@movie.PosterPath" alt="@movie.Title" class="card-img-top" />
+                        <div class="movie-info">
+                            <div class="movie-title">@movie.Title</div>
+                            <p class="movie-overview">
+                                @(movie.Overview?.Length > 90 ? movie.Overview.Substring(0, 90) + "..." : movie.Overview)
+                            </p>
+                            <p class="rating">📅 @movie.ReleaseDate</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="text-center text-muted mt-5">
+                <h4>No movies found 😕</h4>
+            </div>
+        }
+    </div>
+</div>

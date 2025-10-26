@@ -110,8 +110,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASPNET/CineScope/CineScope/Views/Movies/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXEluZGV4LmNzaHRtbA==
+[D:/ASPNET/CineScope/CineScope/Views/Movies/Trending.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXFRyZW5kaW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ASPNET/CineScope/CineScope/Views/Shared/Error.cshtml]
