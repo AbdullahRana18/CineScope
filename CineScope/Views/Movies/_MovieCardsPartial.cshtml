@@ -1,0 +1,29 @@
+﻿@model CineScope.Services.TmdbResponse
+
+@* Partial: renders a grid of movie cards. Used by full Trending view and AJAX 'load more' *@
+
+<div class="row movie-cards">
+    @if (Model?.Results != null && Model.Results.Any())
+    {
+        foreach (var movie in Model.Results)
+        {
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 movie-card-wrap">
+                <div class="card movie-card shadow">
+                    <a asp-controller="Movies" asp-action="Details" asp-route-id="@movie.Id" class="card-link">
+                        <div class="card-image-wrap">
+                            <img src="https://image.tmdb.org/t/p/w500/@movie.PosterPath" class="card-img-top movie-poster" alt="@movie.Title" />
+                        </div>
+                        <div class="card-body p-2">
+                            <h6 class="card-title text-truncate">@movie.Title</h6>
+                            <p class="card-text text-muted small text-truncate">@((movie.Overview?.Length > 90) ? movie.Overview.Substring(0, 90) + "..." : movie.Overview)</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col-12 text-center text-muted">No movies found.</div>
+    }
+</div>

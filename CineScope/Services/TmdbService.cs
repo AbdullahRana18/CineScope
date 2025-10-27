@@ -100,7 +100,35 @@ namespace CineScope.Services
 
             return credits?.Cast?.Take(8).ToList();
         }
-    }
+        public async Task<TmdbResponse?> GetTrendingMoviesAsync(int page = 1)
+        {
+            string url;
+            if (_useBearer)
+            {
+                // v4 token in header
+                url = $"{_baseUrl}/trending/movie/week?page={page}";
+            }
+            else
+            {
+                // v3 key expects api_key
+                url = $"{_baseUrl}/trending/movie/week?api_key={_apiKeyOrToken}&page={page}";
+            }
+
+            var response = await _httpClient.GetAsync(url);
+            if (!response.IsSuccessStatusCode)
+                return null;
+
+            var json = await response.Content.ReadAsStringAsync();
+            try
+            {
+                return JsonConvert.DeserializeObject<TmdbResponse>(json);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        }
 
     // DTO for TMDB API responses
     public class TmdbResponse

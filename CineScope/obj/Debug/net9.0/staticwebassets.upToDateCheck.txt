@@ -1,5 +1,7 @@
+wwwroot\css\cinescope-ui.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\js\movies-ui.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -123,3 +125,5 @@ D:\ASPNET\CineScope\CineScope\wwwroot\lib\jquery\dist\jquery.slim.js
 D:\ASPNET\CineScope\CineScope\wwwroot\lib\jquery\dist\jquery.slim.min.js
 D:\ASPNET\CineScope\CineScope\wwwroot\lib\jquery\dist\jquery.slim.min.map
 D:\ASPNET\CineScope\CineScope\wwwroot\lib\jquery\LICENSE.txt
+D:\ASPNET\CineScope\CineScope\wwwroot\css\cinescope-ui.css
+D:\ASPNET\CineScope\CineScope\wwwroot\js\movies-ui.js

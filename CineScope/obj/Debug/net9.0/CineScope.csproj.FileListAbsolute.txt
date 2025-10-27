@@ -445,3 +445,5 @@ D:\ASPNET\CineScope\CineScope\bin\Debug\net9.0\runtimes\win-arm\native\e_sqlite3
 D:\ASPNET\CineScope\CineScope\bin\Debug\net9.0\runtimes\win-arm64\native\e_sqlite3.dll
 D:\ASPNET\CineScope\CineScope\bin\Debug\net9.0\runtimes\win-x64\native\e_sqlite3.dll
 D:\ASPNET\CineScope\CineScope\bin\Debug\net9.0\runtimes\win-x86\native\e_sqlite3.dll
+D:\ASPNET\CineScope\CineScope\obj\Debug\net9.0\compressed\89w0ti5oqd-{0}-8qsqou6cbt-8qsqou6cbt.gz
+D:\ASPNET\CineScope\CineScope\obj\Debug\net9.0\compressed\ftkq5v13fv-{0}-8ti1c8iael-8ti1c8iael.gz

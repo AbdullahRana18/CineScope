@@ -19,15 +19,26 @@ namespace CineScope.Controllers
             return RedirectToAction("Trending");
         }
 
-        public async Task<IActionResult> Trending()
+        // ✅ Keep only ONE Trending method — support pagination inside it
+        [HttpGet]
+        public async Task<IActionResult> Trending(int page = 1)
         {
-            var trendingMovies = await _tmdbService.GetTrendingMoviesAsync();
-            if (trendingMovies == null)
+            var trending = await _tmdbService.GetTrendingMoviesAsync(page);
+
+            if (trending == null)
             {
                 ViewData["Error"] = "Unable to fetch trending movies. Please try again later.";
+                return View("Trending", null);
             }
 
-            return View("Trending", trendingMovies);
+            // If AJAX request (Load More button)
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("_MovieCardsPartial", trending);
+            }
+
+            // Initial page load
+            return View("Trending", trending);
         }
 
         [HttpGet]
